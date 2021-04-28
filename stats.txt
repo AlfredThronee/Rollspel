@@ -1,0 +1,5 @@
+Namn: Alfred den tappre
+Styrka: -2
+Intelligens: 17
+Karisma: 13
+Smidighet: 15

@@ -1,0 +1,11 @@
+Mål med kod, hämta flera grundegenskaper från textfil, flera funktioner
+
+OM jag söker "specifik grundegenskap"
+    
+    anropa "grundegenskap 1"
+
+    annars, 
+
+    anropa "grundegenskap 2"
+
+    osv
