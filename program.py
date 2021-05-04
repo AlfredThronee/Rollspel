@@ -1,5 +1,7 @@
 import random
 
+random.seed()
+
 def smidighet_function():
 
     f = open("stats.txt", "rt") #öppnar filen och läser ifrån den
@@ -62,7 +64,7 @@ def egenskapskoll_function():
 
     felmeddelande1 = "Du har inte angivit en korrekt egenskap." #Felmeddelande som visas om man anger en felaktig egenskap
 
-    grundvärden = ["Smidighet, Styrka, Intelligens, Karisma"] #De fyra värden jag hittills angivit som riktiga finns här
+    grundvärden = ["1"] #Det jag gjorde fel fungerar när jag gör såhär så då gör vi såhär
 
     for raw_input in grundvärden: #Denna for loop körs för att först se om Karisma, Styrka, Intelligens, eller Smidighet är angivna, för att sedan köra en av föregående funktioner
         if egenskap == "Karisma":
@@ -76,22 +78,65 @@ def egenskapskoll_function():
         else:
             print(felmeddelande1) #Om ditt angivna värde inte matchar något av de värdena som är angivna så visas ett felmeddelande
 
-random.seed()
+def sla_sexsidig_tarning_tioggr():
 
-#def sla_sexsidig_tarning_tioggr():
-#
-#    i = 0
-#    while i < 10:
-#        print(random.randint(1, 6))
-#        i += 1
+    i = 0
+    while i < 10:
+        print(random.randint(1, 6))
+        i += 1
 
 def t6_function():
 
-    print(random.randint(1, 6))
+    print(random.randint(1, 6)) #Slår en tärning som ger mig ett värde mellan 1 och 6
 
 def t20_function():
 
-    print(random.randint(1, 20))
+    print(random.randint(1, 20)) #Slår en tärning som ger mig ett värde mellan 1 och 20
+
+def smyga():
+
+    f = open("stats.txt", "rt")
+
+    text = "Du slog: "
+
+    smidighet = "Smidighet:"
+
+    for line in f:
+
+        if smidighet in line:
+
+            dex = int(line[11:13])
+            
+            val = int(random.randint(1, 20))
+
+            if val == 1:
+                print(text + str(val) + " , perfekt!")
+            
+            elif val <= dex:
+                print(text + str(val) + ", du lyckades!")
+
+            elif val == 20:
+                print(text + str(val) + ", fummel!")
+
+            elif val > dex:
+                print(text + str(val) + ", du misslyckades!")
+
+            else:
+                print("vad är problemet")
+
+    f.close()
+
+def getskill():
+
+    angivet = input("Vilken egenskap vill du se?")
+
+    thisdict = {
+    "Smyga": "13",
+    "Fäktas": "17",
+    "Dyrka lås": "16"
+    }
+
+    print(thisdict[angivet])
 
 def startfunktion():
     
@@ -108,7 +153,11 @@ def startfunktion():
             t6_function()
         elif angivet == "Slå tjugosidig tärning":
             t20_function()
+        elif angivet == "Smyga":
+            smyga()
+        elif angivet == "Getskill":
+            getskill()
         else:
-            print(felmeddelande2)
+            print(felmeddelande2) #Ungefär samma funktion som tidigare, som kör en av de andra funktionerna jag skapat. Det fungerar och det finns struktur. Jag nöjd.
 
-startfunktion()
+startfunktion() #Kör startfunktion som sedan kör en annan funktion.
