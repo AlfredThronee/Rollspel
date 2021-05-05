@@ -9,3 +9,22 @@ OM jag söker "specifik grundegenskap"
     anropa "grundegenskap 2"
 
     osv
+
+ObT6 - Mål med koden, slå en tärning eller flera, om en av dem är en sexa slår jag om den tärningen med två nya tärningar.
+
+ABSOLUT GENI gör en lista med siffrorna och sedan en python.sum(list) för att addera allt fucking geni älskar led zeppelin dem fick mig på humör
+(se testfil där testar jag detta så att jag inte är helt ute och cyklar med list)
+
+Slå en tärning mellan 1-6
+
+OM den tärningen är en sexa:
+
+    slå två tärningar
+
+    OM en av tärningarna är en sexa, spara den andra som rest i en lista med värde -tärningsvärde-, sedan kör om funktion.
+
+        OM BÅDA tärningarna är sexor, fanvetjag
+
+ANNARS:
+
+    spara värdet som rest som -tärningsvärde- i en lista, meddelande att tärningen inte var en sexa och istället en -tärningsvärde-

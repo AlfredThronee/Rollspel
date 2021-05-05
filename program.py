@@ -93,7 +93,7 @@ def t20_function():
 
     print(random.randint(1, 20)) #Slår en tärning som ger mig ett värde mellan 1 och 20
 
-def smyga():
+def smyga_function():
 
     f = open("stats.txt", "rt")
 
@@ -126,7 +126,7 @@ def smyga():
 
     f.close()
 
-def getskill():
+def getskill_function():
 
     angivet = input("Vilken egenskap vill du se?")
 
@@ -137,6 +137,22 @@ def getskill():
     }
 
     print(thisdict[angivet])
+
+def obT6_function():
+
+    list = [0]
+
+    ursprunglig = (random.randint(6, 6))
+
+    if ursprunglig == 6:
+        print("Du slog en sexa, omslag! " + str(ursprunglig))
+        list.append(ursprunglig)
+        numbers_sum = sum(list)
+        print(numbers_sum)
+    
+    else:
+        print("Du slog en " + str(ursprunglig) + "a")
+
 
 def startfunktion():
     
@@ -153,10 +169,12 @@ def startfunktion():
             t6_function()
         elif angivet == "Slå tjugosidig tärning":
             t20_function()
+        elif angivet == "obT6":
+            obT6_function()
         elif angivet == "Smyga":
-            smyga()
+            smyga_function()
         elif angivet == "Getskill":
-            getskill()
+            getskill_function()
         else:
             print(felmeddelande2) #Ungefär samma funktion som tidigare, som kör en av de andra funktionerna jag skapat. Det fungerar och det finns struktur. Jag nöjd.
 
