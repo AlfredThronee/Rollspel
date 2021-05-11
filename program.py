@@ -2,6 +2,8 @@ import random
 
 random.seed()
 
+list = [0]
+
 def smidighet_function():
 
     f = open("stats.txt", "rt") #öppnar filen och läser ifrån den
@@ -138,21 +140,42 @@ def getskill_function():
 
     print(thisdict[angivet])
 
-def obT6_function():
+def en_del_av_obT6():
 
-    list = [0]
+    print("Du slog en sexa, omslag!")
+    första = (random.randint(1, 6))
+    andra = (random.randint(1, 6))
+
+    if första == 6:
+        print("a " + str(första))
+        en_del_av_obT6()
+
+    else:
+        list.append(första)
+        print(str(första))
+
+    if andra == 6:
+        print("b " + str(andra))
+        en_del_av_obT6()
+        
+    else: 
+        list.append(andra)
+        print(str(andra))
+        
+    if första != 6 and andra != 6:
+    
+        numbers_sum = sum(list)
+        print(str(numbers_sum) + " är din totala summa")
+
+def obT6_function():
 
     ursprunglig = (random.randint(6, 6))
 
     if ursprunglig == 6:
-        print("Du slog en sexa, omslag! " + str(ursprunglig))
-        list.append(ursprunglig)
-        numbers_sum = sum(list)
-        print(numbers_sum)
-    
+        en_del_av_obT6()
+
     else:
         print("Du slog en " + str(ursprunglig) + "a")
-
 
 def startfunktion():
     
@@ -178,4 +201,6 @@ def startfunktion():
         else:
             print(felmeddelande2) #Ungefär samma funktion som tidigare, som kör en av de andra funktionerna jag skapat. Det fungerar och det finns struktur. Jag nöjd.
 
-startfunktion() #Kör startfunktion som sedan kör en annan funktion.
+#startfunktion() #Kör startfunktion som sedan kör en annan funktion.
+
+obT6_function()

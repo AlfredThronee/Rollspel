@@ -21,10 +21,15 @@ OM den tärningen är en sexa:
 
     slå två tärningar
 
-    OM en av tärningarna är en sexa, spara den andra som rest i en lista med värde -tärningsvärde-, sedan kör om funktion.
+    OM en av tärningarna är en sexa, appenda den andra till listan som rest i en lista med värde -tärningsvärde-, sedan kör om funktion.
 
         OM BÅDA tärningarna är sexor, fanvetjag
 
 ANNARS:
 
     spara värdet som rest som -tärningsvärde- i en lista, meddelande att tärningen inte var en sexa och istället en -tärningsvärde-
+
+Jag behöver en while loop som körs så länge en av slagen är en sexa
+
+Om första == 6 ELLER andra == 6 kör = true
+
