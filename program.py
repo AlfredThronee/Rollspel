@@ -3,6 +3,9 @@ import random
 random.seed()
 
 list = [0]
+list_obT6 = [0]
+list_T6 = [0]
+list_T20 = [0]
 
 def smidighet_function():
 
@@ -142,40 +145,43 @@ def getskill_function():
 
 def en_del_av_obT6():
 
-    print("Du slog en sexa, omslag!")
     första = (random.randint(1, 6))
     andra = (random.randint(1, 6))
 
-    if första == 6:
+    if första == 6 and andra == 6: #Om BÅDA är sexor, high roller liksom, då ska funktionen köras två gånger
         print("a " + str(första))
+        print("b " + str(första))
+        en_del_av_obT6()
         en_del_av_obT6()
 
-    else:
+    elif första == 6: #Om FÖRSTA är en sexa så körs den en gång
+        print("Sexa!")
+        en_del_av_obT6()
+    
+    else: #Annars appendar man till listan o kör vidare med slag 2
         list.append(första)
         print(str(första))
 
-    if andra == 6:
-        print("b " + str(andra))
+    if andra == 6: #SLAG TVÅ DAMER OCH HERRAR (Herrar eftersom bara Björn läser).
+        print("Sexa!") #Nu är alltså det ANDRA slaget en sexa. Samma visa som förra gången more or less
         en_del_av_obT6()
         
-    else: 
+    else: #Lite lose att inte slå en sexa så då bara appendar man, o visan är över för denna gång om ingen sexa slagits
         list.append(andra)
         print(str(andra))
-        
-    if första != 6 and andra != 6:
-    
-        numbers_sum = sum(list)
-        print(str(numbers_sum) + " är din totala summa")
 
 def obT6_function():
 
-    ursprunglig = (random.randint(6, 6))
+    ursprunglig = (random.randint(6, 6)) #Står just nu så att det första slaget ALLTID är en sexa för att testa så att hela funktionen kommer fungera
 
     if ursprunglig == 6:
+        print("Du slog en sexa!")
         en_del_av_obT6()
+        numbers_sum = sum(list)
+        print(str(numbers_sum) + " är din totala summa") #Denna körs när hela obt6 grejen innan körts, och printar ut den sammanlagda summan
 
     else:
-        print("Du slog en " + str(ursprunglig) + "a")
+        print("Du slog en " + str(ursprunglig) + "a") #Riktigt lose att inte ens slå EN sexa på första slaget
 
 def startfunktion():
     
@@ -203,4 +209,4 @@ def startfunktion():
 
 #startfunktion() #Kör startfunktion som sedan kör en annan funktion.
 
-obT6_function()
+obT6_function() #Kört endast denna nu för att testa min obT6 funktion

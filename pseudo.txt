@@ -33,3 +33,13 @@ Jag behöver en while loop som körs så länge en av slagen är en sexa
 
 Om första == 6 ELLER andra == 6 kör = true
 
+while true, random.randint
+
+alfred slutade sedan göra sin while loop och gjorde istället något som 
+f u n g e r a r
+
+tack och hej
+
+jämföra obT6, 3obT6, 3T6 och T20
+
+göra separata listor, appenda summan av 100 slag och sen dela med 100 för att få snittet
